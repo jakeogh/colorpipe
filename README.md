@@ -96,7 +96,8 @@ user    0m5.858s
 sys     0m4.282s
 
 
-# yep. so not a good option for a general solution. the command could just keep running forever because we wanted the first 10 lines
+# Yep. So not a good option for a general solution.
+# The command could just keep running forever because we wanted the first 10 lines.
 # ask #tcl
 # #tcl aspect:
 #    I think the simplest script to dwyw is something like: trap exit SIGPIPE; spawn -noecho {*}$argv; expect
