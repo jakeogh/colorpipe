@@ -204,7 +204,7 @@ real    0m0.020s
 user    0m0.008s
 sys     0m0.010s
 
-# perfect. seems like a general solution to the "force color through the pipe" problem, independent of app support.
+# seems like a general solution to the "force color through the pipe" problem, independent of app support.
 ```
 
 [1]
