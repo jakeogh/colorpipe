@@ -199,7 +199,6 @@ $ # perfect. seems like a general solution to the "force color through the pipe"
 ```
 
 [1]
-
 * <https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output>
 * <https://bbs.archlinux.org/viewtopic.php?id=67982>
 * <https://superuser.com/questions/417957/is-there-any-way-to-keep-text-passed-to-head-tail-less-etc-to-be-colored>
