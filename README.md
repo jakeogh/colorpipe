@@ -1,5 +1,5 @@
 
-The net has plenty of questions that boil down to "my app has color output, but the color is lost when I pipe it or redirect it.
+The net has plenty* of questions that boil down to "my app has color output, but the color is lost when I pipe it or redirect it".
 
 colorpipe aims to be a general solution to this problem
 
@@ -31,7 +31,7 @@ real    0m0.005s
 user    0m0.003s
 sys     0m0.001s
 
-$ # bummer no color. ah well, some apps have flags to override their tty output detection, like ls: "/bin/ls -al --color=always | head" outputs the first 10 lines in color. I am sure git has some option, but I didnt find a simple command switch. What about a general solution? the expect package has unbuffer, which fools the app into thinking it's outputting to the terminal
+$ # bummer no color. ah well, some apps have flags to override their tty output detection, like ls: "/bin/ls -al --color=always | head" outputs the first 10 lines in color. I am sure git has a similar option. What about a general solution? the expect package has unbuffer, which fools the app into thinking it's outputting to the terminal
 
 $ time /usr/bin/unbuffer /usr/bin/git --no-pager log | head
 commit 6fd47a431fc14b9408099905b36630fdb8ff73b9 (HEAD -> x11-wm/qtile, upstream/master, origin/master, origin/HEAD, master)
@@ -197,3 +197,19 @@ sys     0m0.010s
 
 $ # perfect. seems like a general solution to the "force color through the pipe" problem, independent of app support.
 ```
+
+*
+
+https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output
+
+https://bbs.archlinux.org/viewtopic.php?id=67982
+
+https://superuser.com/questions/417957/is-there-any-way-to-keep-text-passed-to-head-tail-less-etc-to-be-colored
+
+https://superuser.com/questions/385768/less-emulate-a-tty-to-preserve-piped-color-output/385799#385799
+
+https://stackoverflow.com/questions/2327191/preserve-colouring-after-piping-grep-to-grep
+
+https://stackoverflow.com/questions/1312922/detect-if-stdin-is-a-terminal-or-pipe/7601564#7601564
+
+
