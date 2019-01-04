@@ -1,0 +1,6 @@
+#!/usr/bin/env tclsh
+
+# by aspect@#tcl
+
+package require Expect
+trap exit SIGPIPE; spawn -noecho {*}$argv; expect
