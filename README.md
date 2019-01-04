@@ -1,5 +1,5 @@
 
-The net has plenty* of questions that boil down to "my app has color output, but the color is lost when I pipe it or redirect it".
+The net has plenty* of questions that boil down to "my app has color output, but the color is lost when I pipe or redirect it".
 
 colorpipe aims to be a general solution to this problem
 
@@ -198,18 +198,13 @@ sys     0m0.010s
 $ # perfect. seems like a general solution to the "force color through the pipe" problem, independent of app support.
 ```
 
-*
+ *
 
 https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output
-
 https://bbs.archlinux.org/viewtopic.php?id=67982
-
 https://superuser.com/questions/417957/is-there-any-way-to-keep-text-passed-to-head-tail-less-etc-to-be-colored
-
 https://superuser.com/questions/385768/less-emulate-a-tty-to-preserve-piped-color-output/385799#385799
-
 https://stackoverflow.com/questions/2327191/preserve-colouring-after-piping-grep-to-grep
-
 https://stackoverflow.com/questions/1312922/detect-if-stdin-is-a-terminal-or-pipe/7601564#7601564
 
 
