@@ -198,7 +198,7 @@ sys     0m0.010s
 $ # perfect. seems like a general solution to the "force color through the pipe" problem, independent of app support.
 ```
 
- *
+    *
 
 https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output
 https://bbs.archlinux.org/viewtopic.php?id=67982
