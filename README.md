@@ -209,8 +209,8 @@ real    0m0.020s
 user    0m0.008s
 sys     0m0.010s
 
-# seems like a general solution to the "force color through the pipe" problem, independent of app support.
 ```
+
 
 [1]
 * <https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output>
@@ -219,5 +219,4 @@ sys     0m0.010s
 * <https://superuser.com/questions/385768/less-emulate-a-tty-to-preserve-piped-color-output/385799>
 * <https://stackoverflow.com/questions/2327191/preserve-colouring-after-piping-grep-to-grep>
 * <https://stackoverflow.com/questions/1312922/detect-if-stdin-is-a-terminal-or-pipe/7601564>
-
 
