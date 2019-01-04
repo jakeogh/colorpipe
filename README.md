@@ -38,9 +38,9 @@ sys     0m0.001s
 
 # bummer no color. ah well, some apps have flags to override their tty output detection,
 # like ls: "/bin/ls -al --color=always | head" outputs the first 10 lines in color.
-# I am sure git has a similar option.
+# Git has a similar option: --color=always
 # What about a general solution? The expect package has unbuffer, which fools the app into
-# thinking it's outputting to the terminal
+# thinking it's outputting to the terminal.
 
 $ time /usr/bin/unbuffer /usr/bin/git --no-pager log | head
 commit 6fd47a431fc14b9408099905b36630fdb8ff73b9 (HEAD -> x11-wm/qtile, upstream/master, origin/master, origin/HEAD, master)
@@ -81,7 +81,7 @@ real    0m0.029s
 user    0m0.001s
 sys     0m0.000s
 
-# nice, it has color, and it's fast. but... we know git kept running in the background. double cheking:
+# Nice, it has color, and it's fast, but we know git kept running in the background. Double cheking:
 
 $ head < <(time /usr/bin/unbuffer /usr/bin/git --no-pager log)
 commit 6fd47a431fc14b9408099905b36630fdb8ff73b9 (HEAD -> x11-wm/qtile, upstream/master, origin/master, origin/HEAD, master)
@@ -131,6 +131,8 @@ sys     0m0.010s
 
 # Perfect. it's in color, it's fast and it does not leave a process running.
 # Lets try it on /usr/bin/tree (over the main gentoo ebuild repo)
+# note: tree has an option to always output color (-C), we ignore it for example purposes
+
 
 $ time /usr/bin/tree | wc -l
 126149
