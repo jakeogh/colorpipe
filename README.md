@@ -1,7 +1,11 @@
 
 The net has plenty[1] of questions that boil down to "my app has color output, but the color is lost when I pipe or redirect it".
 
-colorpipe aims to be a general solution to this problem
+Glossig over the details, in general it's because the app detects that it's not outputing to a terminal directly and does not output the ASCII color codes.
+
+The solution is normally to ask the app to output the ASCII color codes anyway. This is spp specific.
+
+colorpipe aims to be a general solution to the problem, independent of app support.
 
 --Usage--
 
