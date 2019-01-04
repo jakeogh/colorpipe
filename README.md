@@ -1,4 +1,20 @@
 
+The net has plenty of questions that boil down to "my app has color output, but the color is lost when I pipe it or redirect it.
+
+colorpipe aims to be a general solution to this problem
+
+--Usage--
+
+```
+./colorpipe /usr/bin/tree | head
+```
+
+
+--Details--
+
+```
+$ cd gentoo # this is an old clone of https://github.com/gentoo/gentoo
+
 $ time /usr/bin/git --no-pager log | head
 commit 6fd47a431fc14b9408099905b36630fdb8ff73b9
 Author: Kent Fredric <kentnl@gentoo.org>
@@ -180,3 +196,4 @@ user    0m0.008s
 sys     0m0.010s
 
 $ # perfect. seems like a general solution to the "force color through the pipe" problem, independent of app support.
+```
