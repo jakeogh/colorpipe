@@ -200,11 +200,11 @@ $ # perfect. seems like a general solution to the "force color through the pipe"
 
 [1]
 
-<https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output>
-<https://bbs.archlinux.org/viewtopic.php?id=67982>
-<https://superuser.com/questions/417957/is-there-any-way-to-keep-text-passed-to-head-tail-less-etc-to-be-colored>
-<https://superuser.com/questions/385768/less-emulate-a-tty-to-preserve-piped-color-output/385799>
-<https://stackoverflow.com/questions/2327191/preserve-colouring-after-piping-grep-to-grep>
-<https://stackoverflow.com/questions/1312922/detect-if-stdin-is-a-terminal-or-pipe/7601564>
+* <https://unix.stackexchange.com/questions/19317/can-less-retain-colored-output>
+* <https://bbs.archlinux.org/viewtopic.php?id=67982>
+* <https://superuser.com/questions/417957/is-there-any-way-to-keep-text-passed-to-head-tail-less-etc-to-be-colored>
+* <https://superuser.com/questions/385768/less-emulate-a-tty-to-preserve-piped-color-output/385799>
+* <https://stackoverflow.com/questions/2327191/preserve-colouring-after-piping-grep-to-grep>
+* <https://stackoverflow.com/questions/1312922/detect-if-stdin-is-a-terminal-or-pipe/7601564>
 
 
