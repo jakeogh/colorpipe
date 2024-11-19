@@ -15,7 +15,7 @@ colorpipe aims to be a general solution to the problem, independent of app suppo
 
 ### Details
 
-# this is an old clone of https://github.com/gentoo/gentoo
+this is an old clone of https://github.com/gentoo/gentoo
 
 ```
 $ cd gentoo
@@ -37,11 +37,11 @@ user    0m0.003s
 sys     0m0.001s
 ```
 
-# bummer no color. ah well, some apps have flags to override their tty output detection,
-# like ls: "/bin/ls -al --color=always | head" outputs the first 10 lines in color.
-# Git has a similar option: --color=always
-# What about a general solution? The expect package has unbuffer, which fools the app into
-# thinking it's outputting to the terminal.
+bummer no color. ah well, some apps have flags to override their tty output detection,
+like ls: `"/bin/ls -al --color=always | head"` outputs the first 10 lines in color.
+Git has a similar option: --color=always
+What about a general solution? The expect package has unbuffer, which fools the app into
+thinking it's outputting to the terminal.
 
 ```
 $ time /usr/bin/unbuffer /usr/bin/git --no-pager log | head
@@ -61,12 +61,12 @@ user    0m5.866s
 sys     0m4.581s
 ```
 
-# cool, that worked, it's in color... but it took a long time... 5.257s vs 0.005.
-# So it's waiting for git to exit before returning.
-# time to ask #bash
-# #bash koala_man:
-#    if you don't care that the command runs for a while, you can just do
-#    head < <(unbuffer /usr/bin/git --no-pager log)
+cool, that worked, it's in color... but it took a long time... 5.257s vs 0.005.
+So it's waiting for git to exit before returning.
+time to ask #bash
+ #bash koala_man:
+   if you don't care that the command runs for a while, you can just do
+   `head < <(unbuffer /usr/bin/git --no-pager log)`
 
 ```
 $ time head < <(/usr/bin/unbuffer /usr/bin/git --no-pager log)
@@ -86,7 +86,7 @@ user    0m0.001s
 sys     0m0.000s
 ```
 
-# Nice, it has color, and it's fast, but we know git kept running in the background. Double cheking:
+Nice, it has color, and it's fast, but we know git kept running in the background. Double cheking:
 
 ```
 $ head < <(time /usr/bin/unbuffer /usr/bin/git --no-pager log)
@@ -106,11 +106,11 @@ user    0m5.858s
 sys     0m4.282s
 ```
 
-# Yep. So not a good option for a general solution.
-# The command could just keep running forever because we wanted the first 10 lines.
-# ask #tcl
-# #tcl aspect:
-#    I think the simplest script to dwyw is something like: trap exit SIGPIPE; spawn -noecho {*}$argv; expect
+Tep. So not a good option for a general solution.
+The command could just keep running forever because we wanted the first 10 lines.
+ask #tcl
+ #tcl aspect:
+   I think the simplest script to dwyw is something like: trap exit SIGPIPE; spawn -noecho {*}$argv; expect
 
 ```
 $ echo -e '''#!/usr/bin/env tclsh'''"\npackage require Expect\n"'''trap exit SIGPIPE; spawn -noecho {*}$argv; expect''' > colorpipe && chmod +x colorpipe
@@ -137,9 +137,9 @@ user    0m0.008s
 sys     0m0.010s
 ```
 
-# Perfect. it's in color, it's fast and it does not leave a process running.
-# Lets try it on /usr/bin/tree (over the main gentoo ebuild repo)
-# note: tree has an option to always output color (-C), we ignore it for example purposes
+Perfect. it's in color, it's fast and it does not leave a process running.
+Lets try it on /usr/bin/tree (over the main gentoo ebuild repo)
+note: tree has an option to always output color (-C), we ignore it for example purposes
 
 ```
 $ time /usr/bin/tree | wc -l
@@ -165,7 +165,7 @@ $ /usr/bin/tree
 ^C <snip>
 ```
 
-# by default, tree outputs in color and it did here.
+by default, tree outputs in color and it did here.
 
 ```
 $ time /usr/bin/tree | head
@@ -185,7 +185,7 @@ user    0m0.000s
 sys     0m0.003s
 ```
 
-# no color. ok try unbuffer
+no color. ok try unbuffer
 
 ```
 $ time /usr/bin/unbuffer /usr/bin/tree | head
@@ -205,8 +205,8 @@ user    0m1.391s
 sys     0m1.247s
 ```
 
-# That worked, its in color, but had the expected long delay.
-# now colorpipe:
+That worked, its in color, but had the expected long delay.
+now colorpipe:
 
 ```
 $ time ./colorpipe /usr/bin/tree | head
