@@ -7,15 +7,17 @@ The solution is normally to ask the app to output the ASCII color codes anyway. 
 
 colorpipe aims to be a general solution to the problem, independent of app support.
 
---Usage--
+### Usage
 
 ```
 ./colorpipe /usr/bin/tree | head
 ```
 
+### Details
 
---Details--
-
+```
+```
+```
 ```
 # this is an old clone of https://github.com/gentoo/gentoo
 $ cd gentoo
